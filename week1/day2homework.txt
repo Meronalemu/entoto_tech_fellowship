@@ -1,0 +1,3 @@
+day 2
+we have learned about Git and Github
+git is the most popular version control,where version control is a way of managing the different versions of our code.git is the software and github is a web interface that uses  github.git helps to control and manage our project files in terms of history,collaboration and featured branch.
