@@ -3,3 +3,4 @@
 3.The different types of programming languages
 4.The differnce between front and back end
 5.what a command line is
+6.wongi is awsome
