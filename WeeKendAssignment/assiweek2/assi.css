@@ -1,0 +1,44 @@
+.container{
+    height: 400px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    font-style: initial;
+    border-radius: 10%;
+    backface-visibility: inherit;
+    background-color:gray;
+              margin:0% 30% 0% 30%;
+           
+}
+
+.Signin{
+    margin: 0% 30% 0% 30%;
+    align-content: center;
+   }
+.Login-box{
+    width: 400px;
+    height:100px;
+    align-items: center;
+    justify-content:center;
+    display:flex; 
+    flex-wrap: wrap;
+    border-radius: 20%; 
+    flex-direction: column;  
+    box-sizing: inherit;
+    margin: 1% 0% 0% 0%;
+
+}
+.body{
+    background-color: darkgray;
+padding: 2%;
+margin: 2% 20% 2% 20% ;
+}
+.bottom{
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+   }
+.links{
+
+    height: 10px;
+}
