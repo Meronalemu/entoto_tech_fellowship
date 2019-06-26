@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" href="./jQuery.css">
+    <script type="text/javascript" src="./jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="./jQuery.js"></script>
+<script>
+   
+$(document).ready(function(){
+        // $('ul#list li:even').css('color','red');
+        $('ul#list li:first').css('color','red');  
+        $('ul#list li:even').css('background','lightgray');  
+       $('ul#list li:nth-child(3n)').css('list-style','none');
+     });
+
+   
+// });
+</script>
+</head>
+<body>  
+        <p>If you click on the "Hide" button, I will disappear.</p>
+<ul id="list">
+    <li>one </li>
+    <li>two</li>
+    <li>three</li>
+    <li>four</li>
+    <li>five</li>
+    <li>six</li>
+    <li>seven</li>
+    <li>eight</li>
+</ul>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</body>
+
+</html>

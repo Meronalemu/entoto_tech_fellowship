@@ -1,0 +1,10 @@
+#hide{
+   -webkit-text-stroke-color: brown;
+justify-content: center;
+
+}
+#show{
+   -webkit-text-stroke-color: purple;
+justify-content: center;
+
+}

@@ -1,21 +1,22 @@
 .container{
     height: 400px;
-    width: 500px;
+    width: 300px;
     display: flex;
     flex-wrap: wrap;
     font-style: initial;
     border-radius: 10%;
     backface-visibility: inherit;
-    background-color:gray;
-              margin:0% 30% 0% 30%;
+    background-color:lightgrey;
+              margin:3% 30% 10% 40%;
            
 }
+
 
 .Signin{
     margin: 0% 30% 0% 30%;
     align-content: center;
    }
-.Login-box{
+/* .Login-box{
     width: 400px;
     height:100px;
     align-items: center;
@@ -27,7 +28,7 @@
     box-sizing: inherit;
     margin: 1% 0% 0% 0%;
 
-}
+} */
 .body{
     background-color: darkgray;
 padding: 2%;

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src=".\jquery-3.4.1.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb.min.css" rel="stylesheet">
+<!-- Your custom styles (optional) -->
+<link href="css/style.css" rel="stylesheet">
+<link href="E:\wamp\www\all\json.json" rel="stylesheet">
+<!-- <link  href="E:\wamp\www\all\json.js" rel="stylesheet"> -->
+<!-- <script>
+   var JSON = [
+    {"firstName":"John", "lastName":"Doe"},
+   {"firstName":"Anna", "lastName":"Smith"},
+     {"firstName":"Peter","lastName": "Jones"}
+ ];
+  </script> -->
+  <script src="json.js"> </script>
+<script>
+  
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $.get("json.js",function(data,status) {
+          
+            $('#test').html( console.log(JSON[0].Name+ " " + "is"+ " " + JSON[0].Type));
+            $('#test').html( console.log(JSON[1].Name+ " " + "is"+ " " + JSON[1].Type));
+            $('#test').html( console.log(JSON[2].Name+ " " + "is"+ " " + JSON[2].Type));
+            // alert(status);
+            // console.log(JSON[0])
+        })
+        });
+      });
+   $(document).ready(function(){
+   $("#btn2").click(function(){
+      $.get("memi.txt",function(data,status) {
+        $('#test2').show(data);
+        alert(status);
+   })
+ });
+   });
+   $(document).ready(function(){
+   $("#btn3").click(function(){
+      $.get(".disp",function(data,status) {
+        $('#test3').show(data);
+        alert(status);
+   })
+ });
+   });
+</script>
+</head>
+<body>
+    <div  class="card">
+            <h6 class="card-title">Animals name and list</h6>
+         
+          <button type="button" class="btn btn-info" id="btn1">BUTTON1</button> 
+          <button id="btn2" type="button" class="btn btn-info" >BUTTON2</button>   
+          <button type="button" class="btn btn-info" id="btn3">BUTTON3</button> 
+        
+            <p id="test"></p> 
+            <p id="test2"></p>
+            <p id="test3"></p>
+          </div>
+          <!-- <div class="disp">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">meowsy is a cat</li>
+                <li class="list-group-item">barky is a dog</li>
+                <li class="list-group-item">purrpaw is a cat</li>
+              </ul>
+            </div>
+       -->
+ <div id="div1"><h5> jQuery AJAX JSON </h5></div> 
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+</html>

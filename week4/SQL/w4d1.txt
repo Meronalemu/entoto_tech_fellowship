@@ -1,0 +1,212 @@
+//select
+SELECT `fellowList`, `fellowName`, `age`, `contact`, `educationLevel`, `address` FROM `fellow` WHERE 1
+SELECT `fellowList`, `fellowName`, `age` FROM `fellow` WHERE 1
+//distinct
+SELECT DISTINCT fellowName FROM `fellow` WHERE 1
+//where
+SELECT CustomerName
+FROM fellow
+WHERE CustomerName operator value;
+//and and or
+//and
+//table 2
+SELECT * FROM fellow WHERE fellowList='1' AND fellowName='Meron Alemu'
+//table 1
+SELECT * FROM Customers
+WHERE Country='Germany'
+AND City='Berlin'
+//or
+/table 1
+SELECT * FROM Customers
+WHERE City='Berlin'
+OR City='München';
+/table 2
+SELECT * FROM fellow WHERE age='22' OR address='Addis Ababa'
+/table2 and & or
+SELECT * FROM fellow WHERE fellowList='3' AND (address='Bahir dar' OR address='gonder'
+//ORDER BY
+The ORDER BY keyword is used to sort the result-set by one or more columns.
+... asc
+SELECT * FROM Customer ORDER BY Country
+... asc
+SELECT * FROM fellow ORDER BY fellowName
+..dece
+SELECT * FROM fellow ORDER BY age DESC
+..both in one 
+SELECT * FROM fellow ORDER BY fellowName, age
+//insert
+INSERT INTO customer (customerID,CustomerName,ContactName,Address,City,PostalCode,Country) VALUES ('8','yeabsira alemu','yabi','bahir dar','tana','05','abissinya')
+//update
+UPDATE fellow
+SET fellowList='6',fellowName='jemanesh', age='24',contact='jemi',education='undergrad',address='addis ababa' WHERE age='football';
+//delete
+DELETE FROM fellow
+WHERE fellowName='jemanesh' AND age='24';
+...entire folder
+DELETE FROM user;
+DELETE * FROM user;
+//select top
+..table1
+SELECT TOP 50 PERCENT * FROM Customer;
+SELECT TOP 2 * FROM Customer;
+SELECT * FROM fellow LIMIT 2
+..WHERE CustomerName='Alfreds Futterkiste';
+//like
+The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+..city starting with s
+SELECT * FROM Customer WHERE City LIKE 's%'
+city with dar
+SELECT * FROM fellow WHERE address LIKE '%dar'
+..using not
+SELECT * FROM fellow WHERE address NOT LIKE '%hir%'
+//wildcards..can be used to substitute for any other character(s) in a string.
+wildcard%
+SELECT * FROM fellow
+WHERE address LIKE  'bah%';
+
+SELECT * FROM Customer
+WHERE City LIKE '%s';
+wildcard _
+SELECT * FROM Customer
+WHERE City LIKE '_ondon';
+..city ending with s
+//charlist
+SELECT * FROM fellow
+WHERE address LIKE '[bg]%'
+..USING NOT
+SELECT * FROM Customers
+WHERE City NOT LIKE '[bsp]%';
+//BETWEEN
+The BETWEEN operator is used to select values within a range.
+SELECT * FROM fellow WHERE AGE BETWEEN 20 AND 22
+//Aliases
+SQL aliases are used to temporarily rename a table or a column heading.
+..SELECT CustomerName AS Customer, ContactName AS ContactPerson FROM Customer
+///join
+..inner
+SELECT * FROM table1 inner join table2 on table1.list=table2.list
+.SELECT * FROM table1 INNER JOIN table2 ON table1.list=table2.list
+..shows selectes the wanted files
+SELECT table1.population, table2.country FROM table1 INNER JOIN table2 ON table1.list=table2.list ORDER BY table1.list
+..left join
+SELECT * FROM table1 leftjoin table2 on table1.list=table2.list
+.SELECT population FROM table1 LEFT JOIN table2 ON table1.list=table2.list
+..right join
+.SELECT population FROM table1 RIGHT JOIN table2 ON table1.list=table2.list
+SELECT * FROM table1 right join table2 on table1.list=table2.list
+...FULL JOIN
+SELECT table1.LIST,table2.country FROM table1 JOIN table2 ON table1.list=table2.lisT ORDER BY table1.list
+..SELECT country FROM table1 UNION SELECT country FROM table2 ORDER BY country
+//union-same column no and data type
+.with out repetation
+SELECT country FROM table1 UNION SELECT country FROM table2
+.more than once
+SELECT country FROM table1 UNION ALL SELECT country FROM table2
+//select into
+..to copy data from one table to another
+.create the back up copy of a file
+SELECT *
+INTO CustomersBackup2013
+FROM table2;
+...SELECT country FROM table1 UNION SELECT ALL country FROM table2 ORDER BY country
+..SELECT country FROM table1 UNION SELECT country FROM table2 ORDER BY country
+//create a database
+CREATE DATABASE memi;
+
+
+//table
+...creating table 
+CREATE TABLE table4
+(
+num int(10),
+name text(10),
+address text(20)
+
+);
+....creating table with constraint
+CREATE TABLE table5
+(
+name text(10) not null,
+age int(5) ,
+address varchar(10) not null,
+posta int(10) UNIQUe
+);
+///unique and primary key
+CREATE TABLE YAB
+(
+P_Id int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+PRIMARY KEY (P_Id)
+)
+....or..
+CREATE TABLE yab2
+(
+P_Id int NOT NULL PRIMARY KEY,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255)
+)
+//ALERT TO ADD PRIMARY KEY
+ALTER TABLE MERON
+ADD PRIMARY KEY (P_Id)
+//TO DROP PRIMARY KEY
+ALTER TABLE Persons
+DROP PRIMARY KEY
+//to check constients and create table
+CREATE TABLE yab
+(
+P_Id int(50) NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+CONSTRAINT chk_Person CHECK (P_Id>0 AND City='bahirdar')
+)
+//DEFAULT constraint is used to insert a default value into a column.
+CREATE TABLE yabi
+(
+P_Id int(50) NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+CONSTRAINT chk_Person CHECK (P_Id>0 AND City='bahirdar')
+)
+//CREATE INDEX statement is used to create indexes in tables.
+index can be created in a table to find data more quickly and efficiently
+///creating index
+CREATE INDEX index_name
+ON table_name (column_name)
+DROP PRIMARY KEY
+//drop
+..drop table
+DROP TABLE yabi
+..drop database
+DROP DATABASE bookstore
+..deleting the data not the table//truncate
+TRUNCATE TABLE yab
+//TABLE statement is used to add, delete, or modify columns in an existing table.
+//
+/add
+.ALTER TABLE table5
+ADD  whattodo  text
+/delete
+.ALTER TABLE table5
+DROP COLUMN whattodo
+//Auto-increment allows a unique number to be generated when a new record is inserted into a table.
+//auto incriment
+CREATE TABLE Per
+(
+ID int NOT NULL AUTO_INCREMENT,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+PRIMARY KEY (ID)
+)
+//views
+A view is a virtual table.
